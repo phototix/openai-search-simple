@@ -6,7 +6,7 @@ if(isset($_GET["regenImageFile"])&&!empty($_GET["regenImageFile"])){
 	}
 
 	$fileURL = "https://".$_SERVER["HTTP_HOST"]."/cache/".$_GET["regenImageFile"];
-	$token = "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";
+	$token = "YOUR-OPENAPI-TOKEN-KEY";
 
 	$url = 'https://api.openai.com/v1/images/variations';
 	$data = array(
