@@ -1,0 +1,1 @@
+All generated images will be stored here.
