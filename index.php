@@ -52,5 +52,10 @@ h1{font-size: 1em;}
 
 </div>
 
+<?php
+/* Add updater includes */
+include("updates/update.php");
+?>
+
 </body>
 </html>
