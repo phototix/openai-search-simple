@@ -9,6 +9,9 @@ $Minute=date("i");
 $TimeText=date("A");
 $Time=$Hour.":".$Minute." ".$TimeText;
 
+/* Define your OpenAI API Token Here */
+$token = "YOUR-OPENAPI-TOKEN-KEY";
+
 $timeBuffer = time();
 
 // Put DateTime into Token for unique proof.
