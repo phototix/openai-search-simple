@@ -1,7 +1,5 @@
 <?php
 if(isset($_POST["descText"])&&!empty($_POST["descText"])){
-	
-	$token = "YOUR-OPENAPI-TOKEN-KEY";
 
 	$url = 'https://api.openai.com/v1/completions';
 	$data = array(
@@ -49,8 +47,19 @@ $textEnding="";
 if($notEnough==true){
 	$textEnding="... (can't finish talking....)";
 }
+
+if(isset($_POST["descText"])&&!empty($_POST["descText"])){
+	$question = $_POST["descText"];
+	$answer = $allAnswer;
+
+	$file = fopen("cache/".$Token.".txt", "w"); // Open the file for writing
+	fwrite($file, "**".$question."**" . "\n" . $answer); // Write the strings to the file, separated by a new line character
+	fclose($file); // Close the file
+}
 ?>
 
 <?php if(isset($_POST["descText"])&&!empty($_POST["descText"])){ ?>
-<br><br><textarea class="form-control" readonly="readonly" style="height: 500px;"><?=$allAnswer.$textEnding?></textarea><br><br>
+	<br><br>Your question:<br>
+	<?php echo '<textarea class="form-control" readonly="readonly">'.$_POST["descText"].'</textarea><br><br>'; ?>
+	<textarea class="form-control" readonly="readonly" style="height: 500px;"><?=$allAnswer.$textEnding?></textarea><br><br>
 <?php } ?>

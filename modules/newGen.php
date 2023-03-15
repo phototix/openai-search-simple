@@ -6,8 +6,6 @@ if(isset($_POST["descText"])&&!empty($_POST["descText"])){
 		$sizeInput = $_POST["size"];
 	}
 
-	$token = "YOUR-OPENAPI-TOKEN-KEY";
-
 	$url = 'https://api.openai.com/v1/images/generations';
 	$data = array(
 	    'prompt' => $_POST["descText"],
