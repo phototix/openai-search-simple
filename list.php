@@ -14,7 +14,7 @@ h1{font-size: 1em;}
 
 <div class="container" style="margin-top:20px;margin-bottom:20px;">
 
-	<h1>Generated Images</h1>
+	<h1>Generated Images (Maximum 12 history)</h1>
 
 	<div class="row">
 		<?php
@@ -28,7 +28,13 @@ h1{font-size: 1em;}
 			<div class="col-6 col-md-4" style="padding:5px;">
 				<a href="<?=$fileName?>" target="_blank"><img src="<?=$fileName?>" width="100%" style="width: 100%;"></a>
 			</div>
-
+			<?php  $count++; ?>
+			<?php
+			// Check if the counter has reached 10
+		    if ($count >= 12) {
+		        break;
+		    }
+			?>
 		<?php } ?>
 
 		<hr style="border-bottom: 2px solid #000;margin-top: 20px;">
