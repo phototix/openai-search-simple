@@ -17,3 +17,7 @@
 
 	</form>
 <?php } ?>
+
+<center><br><br>
+	<a href="/list_text.php" class="btn btn-success">View All Generated History</a>
+</center>
