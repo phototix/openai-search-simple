@@ -49,12 +49,15 @@ if($notEnough==true){
 }
 
 if(isset($_POST["descText"])&&!empty($_POST["descText"])){
+
+	/* Store all generated text as history in local. */
 	$question = $_POST["descText"];
 	$answer = $allAnswer;
 
 	$file = fopen("cache/".$Token.".txt", "w"); // Open the file for writing
 	fwrite($file, "**".$question."**" . "\n" . $answer); // Write the strings to the file, separated by a new line character
 	fclose($file); // Close the file
+	
 }
 ?>
 
